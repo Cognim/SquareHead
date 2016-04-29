@@ -22,7 +22,7 @@
 						</button>
 						<div class="navbar-brand" >
 							<cg-timer milliseconds-since-start="gridViewModel.elapsedTime" run-timer="gridViewModel.gameInProgress" ng-if="gridViewModel.gameInProgress"></cg-timer>
-							<span ng-if="!gridViewModel.gameInProgress && gridViewModel.elapsedTime > 0">Congratulations! You took {{gridViewModel.elapsedTime / 1000}} seconds</span>
+							<span ng-if="!gridViewModel.gameInProgress && gridViewModel.elapsedTime > 0">Congratulations! {{gridViewModel.elapsedTime / 1000}}s</span>
 							<span ng-if="!gridViewModel.gameInProgress && gridViewModel.elapsedTime === 0">Choose a type and size.</span>
 						</div>
 					</div>

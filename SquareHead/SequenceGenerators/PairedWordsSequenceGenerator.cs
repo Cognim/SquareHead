@@ -9,24 +9,32 @@ namespace SquareHead.SequenceGenerators
 		public Sequence Generate(int numberOfItems)
 		{
 			var sequence = new Sequence {FirstItem = null};
-			var words = GetWords();
-			var rand = new Random();
-			var lowerBand = 0;
-			var upperBand = words.Count;
 
 			for (var i = 1; i < numberOfItems + 1; i += 2)
 			{
-				string value;
-				do
-				{
-					value = words[rand.Next(lowerBand, upperBand)];
-				} while (sequence.Items.Exists(item => item.Value == value));
+				string word = GetWordNotInSequence(sequence);
 
-				sequence.Items.Add(new SequenceItem {Value = value, NextItem = i + 1});
-				sequence.Items.Add(new SequenceItem {Value = value, NextItem = i});
+				sequence.Items.Add(new SequenceItem { Value = word, NextItem = i + 1 });
+				sequence.Items.Add(new SequenceItem { Value = word, NextItem = i });
 			}
 
 			return sequence;
+		}
+
+		private string GetWordNotInSequence(Sequence sequence)
+		{
+			var words = GetWords();
+
+			var lowerBand = 0;
+			var upperBand = words.Count;
+			var rand = new Random();
+
+			string word;
+			do
+			{
+				word = words[rand.Next(lowerBand, upperBand)];
+			} while (sequence.Items.Exists(item => item.Value == word));
+			return word;
 		}
 
 		private List<string> GetWords()
