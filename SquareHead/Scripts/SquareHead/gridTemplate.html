@@ -1,0 +1,7 @@
+﻿<table class="gameGrid">
+	<tr ng-repeat="row in gridViewModel.grid.rows">
+		<td ng-repeat="cell in row" style="height:{{ 100 / gridViewModel.grid.rows.length }}%; width:{{ 100 / row.length }}%;" class="gameCell" ng-click="gridViewModel.onCellClicked(cell)" ng-class="cell.completed ? 'btn-success' : 'btn-primary'">
+			{{cell.Value}}
+		</td>
+	</tr>
+</table>

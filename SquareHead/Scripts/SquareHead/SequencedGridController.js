@@ -82,33 +82,5 @@
 
 	angular.module('gameGrid')
 		.controller('sequencedGridController', sequencedGridController)
-		.directive('cgTimer', function ($timeout) {
-			return {
-				restrict: 'E',
-				scope: {
-					millisecondsSinceStart: '=',
-					runTimer: '='
-				},
-				template: "{{millisecondsSinceStart | date:'mm:ss:sss'}}",
 
-				link: function (scope) {
-
-					scope.updateElapsedTime = function () {
-						if (scope.runTimer) {
-							scope.millisecondsSinceStart = new Date().getTime() - scope.startTime;
-							$timeout(scope.updateElapsedTime, 10);
-						}
-					}
-
-					scope.$watch('runTimer', function (runTimer) {
-						if (runTimer) {
-							scope.startTime = new Date().getTime();
-							$timeout(scope.updateElapsedTime, 10);
-						}
-					});
-				},
-
-
-			}
-		});;
 }());

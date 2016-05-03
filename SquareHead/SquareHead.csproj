@@ -83,6 +83,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular1\index.html" />
     <Content Include="packages.config" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -103,7 +104,14 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Scripts\Cognim\Helpers.js" />
+    <Content Include="Scripts\SquareHead\gridDirective.js" />
+    <Content Include="Scripts\SquareHead\gridTemplate.html" />
     <Content Include="Scripts\SquareHead\SequencedGridController.js" />
+    <Content Include="Scripts\SquareHead\squareHead.html" />
+    <Content Include="Scripts\SquareHead\squareHeadDirective.js" />
+    <Content Include="Scripts\SquareHead\TimerDirective.js" />
+    <Content Include="Scripts\SquareHead\SettingsDirective.js" />
+    <Content Include="Scripts\SquareHead\SettingsTemplate.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +132,11 @@
     <Compile Include="SequenceGenerators\SteppedSequenceGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular1\App\Components\GridHeader\" />
+    <Folder Include="Angular1\App\Components\Grid\" />
+    <Folder Include="Angular1\App\Components\SquareHead\" />
+    <Folder Include="Angular1\App\Components\Timer\" />
+    <Folder Include="Angular1\Assets\js\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
