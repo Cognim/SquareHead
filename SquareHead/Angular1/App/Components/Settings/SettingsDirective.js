@@ -1,15 +1,15 @@
-﻿(function () {
+﻿(function() {
 	"use strict";
 
 	angular.module("gameGrid")
-		.directive("squareHead", function () {
+		.directive("settings", function() {
 			return {
 				restrict: "E",
 				replace: true,
 				scope: {
 					gridViewModel: "="
 				},
-				templateUrl: "Scripts/SquareHead/squareHead.html"
+				templateUrl: "App/Components/Settings/settingsTemplate.html"
 			};
 		});
 }());
