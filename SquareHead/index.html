@@ -26,8 +26,6 @@
 							<span ng-if="!gridViewModel.gameInProgress && gridViewModel.elapsedTime === 0">Choose a type and size.</span>
 						</div>
 					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown">
@@ -68,17 +66,13 @@
 		</header>
 		<section class="gameContent">
 			<div class="gameContentBody">
-				<div style="height:100%">
-					<div style="height:100%;">
-						<table class="gameGrid">
-							<tr ng-repeat="row in gridViewModel.grid.rows">
-								<td ng-repeat="cell in row" style="height:{{ 100 / gridViewModel.grid.rows.length }}%; width:{{ 100 / row.length }}%;" class="gameCell" ng-click="gridViewModel.onCellClicked(cell)" ng-class="cell.completed ? 'btn-success' : 'btn-primary'">
-									{{cell.Value}}
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
+				<table class="gameGrid">
+					<tr ng-repeat="row in gridViewModel.grid.rows">
+						<td ng-repeat="cell in row" style="height:{{ 100 / gridViewModel.grid.rows.length }}%; width:{{ 100 / row.length }}%;" class="gameCell" ng-click="gridViewModel.onCellClicked(cell)" ng-class="cell.completed ? 'btn-success' : 'btn-primary'">
+							{{cell.Value}}
+						</td>
+					</tr>
+				</table>
 			</div>
 		</section>
 	</div>

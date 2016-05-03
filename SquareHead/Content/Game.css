@@ -16,6 +16,7 @@
 
 .gameContentBody {
 	display: table-cell;
+	height: 100%;
 }
 
 /* Aesthetics */
@@ -25,12 +26,12 @@
 }
 
 .gameHeader, .gameFooter {
-	padding: 10px 20px;
+	padding: 5px;
 	background: #f7f7f7;
 }
 
 .gameContentBody {
-	padding: 20px;
+	padding: 5px;
 	background: #e7e7e7;
 }
 
@@ -44,7 +45,7 @@
 .gameCell {
 	text-align: center;
 	vertical-align: middle;
-	border-radius: 25px;
+	border-radius: 10px;
 	font-size: 4vw;
 }
 
@@ -54,10 +55,6 @@
 
 .timer {
 	font-size: 2vw;
-}
-
-.selection li{
-
 }
 
 @media only screen and (max-width: 1020px) {
